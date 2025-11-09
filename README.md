@@ -8,4 +8,4 @@ Projetos com Javascript
  
  <a href="https://philipepereira10.github.io/html-css-javascript/menuAnimado/index.html"> Executar Menu Animado Ph</a>
 
-  <a href="https://philipepereira10.github.io/html-css-javascript/cofee.pagina/index.html"> Executar Página de Café Ph</a>
+  <a href="https://philipepereira10.github.io/html-css-javascript/cofee-pagina/index.html"> Executar Página de Café Ph</a>
