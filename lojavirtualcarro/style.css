@@ -283,3 +283,84 @@ section {
     }
 
 }
+
+
+@media (max-width: 768px) {
+
+    body {
+        overflow: visible;
+    }
+
+    section .list {
+        width: 90vw;
+    }
+
+    section .list .item .car-img {
+        width: 100%;
+        top: 40%;
+    }
+
+    section .list .item .car-img img {
+        transform: rotate(-10deg);
+    }
+
+    section .list .item .content {
+        width: 100%;
+        right: 0;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    section .list .item .content h2 {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    section .list .item .content .description {
+        max-width: 90%;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .arrows {
+        width: 90vw;
+        top: 80%;
+    }
+
+    .arrows button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .arrows img {
+        width: 20px;
+        margin-top: 0;
+    }
+
+    .indicators {
+        top: 85%;
+        width: 100%;
+        transform: translateX(-50%);
+    }
+
+    .indicators .number {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    .indicators ul li {
+        width: 30px;
+        height: 4px;
+    }
+
+    /* Ajuste das animações */
+    section .list .item {
+        transform: translateX(calc(100% * var(--calculation)));
+    }
+
+    section .list .item .content * {
+        transform: translateX(calc(50px * var(--calculation)));
+    }
+}
+
