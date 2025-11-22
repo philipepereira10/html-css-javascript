@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -10,263 +11,215 @@ body {
     background-color: #000;
     color: #fff;
     font-size: 16px;
-    overflow-x: hidden; 
-    overflow-y: visible; 
+    overflow-x: hidden;
 }
 
+/* HEADER  */
+header {
+    position: fixed;
+    width: 85vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 100;
+}
 
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
 
+/* Menu de navegação */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-links li:hover {
+    color: #beff1b;
+}
+
+/* Hamburger  MOBILE */
+.hamburger {
+    display: none; /* escondido por padrão */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 200;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+/*  SECTION / SLIDER */
 section {
-
     background-image: radial-gradient(#8130a7, #6d00d9);
     height: 100vh;
     position: relative;
-
-    & .list {
-        width: 70vw;
-        margin: auto;
-        height: 100%;
-        position: relative;
-
-        & .item {
-            position: absolute;
-            inset: 0;
-
-            & .car-img {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 70%;
-
-                & img {
-                    width: 100%;
-                    transform: rotate(-28deg);
-                } 
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    background-color: #000;
-                    width: 100%;
-                    height: 100px;
-                    top: 150%;
-                    left: 50px;
-                    border-radius: 50%;
-                    filter: blur(50px);
-                }
-            }
-
-            & .content {
-                position: absolute;
-                right: 0;
-                width: 70%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: end;
-                gap: 40px;
-
-                & .car-information {
-                    font-weight: bold;
-                }
-
-                & h2 {
-                    font-size: 8em;
-                    line-height: 1em;
-                    font-family: "League Gothic", sans-serif;
-                    margin-bottom: 60px;
-                }
-
-                & .description {
-                    color: #d9d9d9d9;
-                    font-size: 12px;
-                    text-align: right;
-                    max-width: 400px;
-                }
-
-                & .information {
-                    border-radius: 30px;
-                    height: 35px;
-                    width: 120px;
-                    text-transform: uppercase;
-                    border: 2px solid #791fd3;
-                    background-color: #beff1b;
-                    color: #000;
-                    cursor: pointer;
-                    font-weight: bold;
-                }
-            }
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            height: 200px;
-            width: 100%;
-            top: 50%;
-            border-top: 1px solid #fff;
-        }
-    }
-
-    .arrows {
-        width: 70vw;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -25px);
-        display: flex;
-        justify-content: space-between;
-
-        & button:nth-child(1) {
-            & img {
-                transform: scale(-1);
-            }
-        }
-
-        & button {
-            top: 60%;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-
-            & img {
-                width: 30px;
-                margin-top: 4px;
-                cursor: pointer;
-            }
-
-            &:hover {
-                background-color: #beff1b;
-            }
-        }
-    }
-
-    .indicators {
-        position: absolute;
-        top: 50%;
-        height: 200px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-        gap: 15px;
-
-
-        & .number {
-            font-size: 5em;
-            font-family: "League Gothic", sans-serif;
-        }
-
-        & ul {
-            display: flex;
-            gap: 10px;
-
-            & li {
-                width: 50px;
-                height: 5px;
-                background-color: #beff1b;
-                border-radius: 5px;
-                transition: 0.5s;
-            }
-
-            & .active {
-                background-color: #fff;
-            }
-        }
-    }
-
-
 }
 
-section {
-    & .list {
-
-        --calculation: 1;
-
-        & .item {
-
-            transform: translateX(calc(100vw * var(--calculation)));
-            transition: 0.5s;
-            opacity: 0;
-
-            & .car-img {
-
-                & img {
-
-                    transform: rotate(0);
-                    transition: 0.5s;
-                    transition-delay: 0.3s;
-                }
-            }
-
-            & .content {
-
-
-                & .car-information,
-                h2,
-                .description,
-                .information {
-
-                    transform: translateX(calc(200px * var(--calculation)));
-                    transition: 0.7s;
-                    transition-delay: 0.3s;
-                    opacity: 0;
-                }
-
-                & h2 {
-                    transition-delay: 0.5s;
-                }
-
-                & .description {
-                    transition-delay: 0.7s;
-                }
-
-                & .information {
-                    transition-delay: 0.9s;
-                }
-            }
-
-        }
-
-        & .active {
-
-            transform: translateX(0);
-            transition: 0.5s;
-            opacity: 1;
-
-            & .car-img {
-
-                & img {
-
-                    transform: rotate(-20deg);
-                }
-            }
-
-            & .content {
-
-
-                & .car-information,
-                h2,
-                .description,
-                .information {
-
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-        }
-    }
-
+section .list {
+    width: 70vw;
+    margin: auto;
+    height: 100%;
+    position: relative;
+    --calculation: 1;
 }
 
+section .list .item {
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(100vw * var(--calculation)));
+    transition: 0.5s;
+    opacity: 0;
+}
 
+section .list .item.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+section .list .item .car-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70%;
+}
+
+section .list .item .car-img img {
+    width: 100%;
+    transform: rotate(0);
+    transition: 0.5s;
+}
+
+section .list .item.active .car-img img {
+    transform: rotate(-20deg);
+}
+
+section .list .item .content {
+    position: absolute;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 40px;
+}
+
+section .list .item .content h2 {
+    font-size: 8em;
+    line-height: 1em;
+    font-family: "League Gothic", sans-serif;
+    margin-bottom: 60px;
+}
+
+section .list .item .content .description {
+    color: #d9d9d9d9;
+    font-size: 12px;
+    text-align: right;
+    max-width: 400px;
+}
+
+section .list .item .content .information {
+    border-radius: 30px;
+    height: 35px;
+    width: 120px;
+    text-transform: uppercase;
+    border: 2px solid #791fd3;
+    background-color: #beff1b;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ARROWS */
+.arrows {
+    width: 70vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrows button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.arrows button:hover {
+    background-color: #beff1b;
+}
+
+.arrows img {
+    width: 30px;
+}
+
+.arrows button:nth-child(1) img {
+    transform: scale(-1);
+}
+
+/* INDICATORS */
+.indicators {
+    position: absolute;
+    top: 50%;
+    height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 15px;
+}
+
+.indicators .number {
+    font-size: 5em;
+    font-family: "League Gothic", sans-serif;
+}
+
+.indicators ul {
+    display: flex;
+    gap: 10px;
+}
+
+.indicators ul li {
+    width: 50px;
+    height: 5px;
+    background-color: #beff1b;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.indicators ul li.active {
+    background-color: #fff;
+}
+
+/*RESPONSIVE */
 @media (max-width: 768px) {
-
     body {
         overflow: visible;
     }
@@ -309,14 +262,25 @@ section {
     }
 
     .arrows button {
-        width: 40px;
-        height: 40px;
-    }
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #beff1b; 
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
 
-    .arrows img {
-        width: 20px;
-        margin-top: 0;
-    }
+.arrows button img {
+    width: 30px;
+}
+
+.arrows button:hover {
+    background-color: #beff1b; /* muda o fundo no hover */
+}
 
     .indicators {
         top: 85%;
@@ -334,76 +298,13 @@ section {
         height: 4px;
     }
 
-    /* Ajuste das animações */
-    section .list .item {
-        transform: translateX(calc(100% * var(--calculation)));
-    }
-
-    section .list .item .content * {
-        transform: translateX(calc(50px * var(--calculation)));
-    }
-}
-
-/* Header básico */
-header {
-    position: fixed;
-    width: 85vw;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    z-index: 100;
-}
-
-header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #fff;
-}
-
-/* Menu  */
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li {
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.nav-links li:hover {
-    color: black;
-}
-
-/* Hamburger - mobile */
-.hamburger {
-       display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    position: relative;
-    top: 10px;
-    right: 10px;
-    z-index: 101;
-}
-
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
-}
-
-
-@media (max-width: 768px) {
+    /* MENU RESPONSIVO */
     .hamburger {
-        display: flex;
+        display: flex; /* aparece só no mobile */
     }
 
     .nav-links {
+        display: none; /* escondido por padrão */
         position: absolute;
         top: 60px;
         right: 10px;
@@ -412,12 +313,11 @@ header .logo {
         padding: 15px;
         border-radius: 10px;
         gap: 10px;
-        display: none; /* escondido por padrão */
         width: 150px;
         text-align: center;
-        transition: transform 0.3s ease, opacity 0.3s ease;
         opacity: 0;
         transform: translateY(-20px);
+        transition: transform 0.3s ease, opacity 0.3s ease;
         z-index: 999;
     }
 
