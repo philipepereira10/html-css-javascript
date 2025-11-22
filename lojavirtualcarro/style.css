@@ -379,10 +379,14 @@ header .logo {
 
 /* Hamburger - mobile */
 .hamburger {
-    display: flex;
+       display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    z-index: 101;
 }
 
 .hamburger div {
