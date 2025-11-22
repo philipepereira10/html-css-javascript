@@ -11,3 +11,5 @@ Projetos com Javascript
   <a href="https://philipepereira10.github.io/html-css-javascript/cofee-pagina/index.html"> Executar Página de Café PH</a>
 
 <a href="https://philipepereira10.github.io/html-css-javascript/sliderinfinito/index.html"> Executar Slider Infinito PH</a>
+
+<a href="https://philipepereira10.github.io/html-css-javascript/lojavirtualcarro/index.html"> Executar Slider Infinito PH</a>
