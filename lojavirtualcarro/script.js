@@ -1,62 +1,49 @@
+document.addEventListener('DOMContentLoaded', () => {
 
+    // Slider
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    const container = document.querySelector('.container');
+    const items = container.querySelectorAll('.list .item');
+    const indicator = document.querySelector('.indicators');
+    const dots = indicator.querySelectorAll('ul li');
+    const list = container.querySelector('.list');
 
-let prevButton = document.getElementById('prev');
-let nextButton = document.getElementById('next');
+    let active = 0;
+    const firstPosition = 0;
+    const lastPosition = items.length - 1;
 
-let container = document.querySelector('.container');
+    function setSlider() {
+        const itemOld = container.querySelector('.list .item.active');
+        itemOld.classList.remove('active');
 
-let items = container.querySelectorAll('.list .item');
-let indicator = document.querySelector('.indicators');
+        const dotOld = indicator.querySelector('ul li.active');
+        dotOld.classList.remove('active');
+        dots[active].classList.add('active');
 
-let dots = indicator.querySelectorAll('ul li');
-let list = container.querySelector('.list');
-
-let active = 0;
-let firstPosition = 0;
-let lastPosition = items.length - 1;
-
-function setSlider() {
-    let itemOld = container.querySelector('.list .item.active');
-    itemOld.classList.remove('active');
-
-    let dotOld = indicator.querySelector('ul li.active');
-    dotOld.classList.remove('active');
-    dots[active].classList.add('active');
-
-    indicator.querySelector('.number').innerHTML = '0' + (active + 1);
-
-
-}
-// NEXT
-nextButton.onclick = () => {
-
-    list.style.setProperty('--calculation' , 1);
-
-    if (active + 1 > lastPosition) {
-        active = 0;
-    } else {
-        active = active + 1;
+        indicator.querySelector('.number').innerHTML = '0' + (active + 1);
     }
 
-    setSlider();
+    nextButton.addEventListener('click', () => {
+        list.style.setProperty('--calculation', 1);
+        active = (active + 1 > lastPosition) ? 0 : active + 1;
+        setSlider();
+        items[active].classList.add('active');
+    });
 
-    items[active].classList.add('active');
+    prevButton.addEventListener('click', () => {
+        list.style.setProperty('--calculation', -1);
+        active = (active - 1 < firstPosition) ? lastPosition : active - 1;
+        setSlider();
+        items[active].classList.add('active');
+    });
 
-}
+    // Hamburger
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
 
-// PREV
-prevButton.onclick = () => {
-
-    list.style.setProperty('--calculation' , -1);
-
-    if (active - 1 < firstPosition) {
-        active = lastPosition;
-    } else {
-        active = active - 1;
-    }
-
-    setSlider();
-
-    items[active].classList.add('active');
-}
+});
