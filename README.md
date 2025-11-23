@@ -13,3 +13,5 @@ Projetos com Javascript
 <a href="https://philipepereira10.github.io/html-css-javascript/sliderinfinito/index.html"> Executar Slider Infinito PH</a>
 
 <a href="https://philipepereira10.github.io/html-css-javascript/lojavirtualcarro/index.html"> Executar Loja Virtual Carros PH</a>
+
+<a href="https://philipepereira10.github.io/html-css-javascript/slider/index.html"> Slider Viagens PH</a>
